@@ -52,6 +52,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kristijanhusak/defx-icons'
 Plug 'terryma/vim-expand-region'
 "Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
 Plug 'junegunn/goyo.vim'
 " }}}
@@ -106,10 +107,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " }}}
 " Diagnostics {{{
-Plug 'w0rp/ale'
-" }}}
+"Plug 'w0rp/ale'
 " }}}
 " FileType {{{
+" }}}
 " Ansible {{{
 Plug 'pearofducks/ansible-vim'
 " }}}
