@@ -29,6 +29,7 @@ alias mkdir='mkdir -p'
 alias mpv='mpv --shuffle'
 alias getip='grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
 alias passgen="python -c 'import crypt,getpass; print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'"
+alias pip-upgrade='pip install $(pip list --outdated --format=freeze | awk -F"==" "{print $1}") --upgrade'
 
 # X11 clipboard support for vim
 if [ -e /usr/bin/vimx ]; then

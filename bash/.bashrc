@@ -11,6 +11,9 @@
 #     █▓██   ▒██▒█  ▒███▒  █   █   █      ▓██▒
 #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -20,14 +23,18 @@ export PROJECT_HOME=$HOME/Repositories
 export VISUAL=vim
 export EDITOR=vim
 export BROWSER=firefox
+if [ -f /usr/local/bin/virtualenvwrapper.sh  ]; then
+  export WORKON_HOME=~/Venvs
+  . /usr/local/bin/virtualenvwrapper.sh
+elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
+  export WOKRON_HOME=~/Venvs
+  . /usr/bin/virtualenvwrapper.sh
+fi
 
 # STEAM games stuff
 # Fallout 4
 WINEPREFIX=/games/SteamLibrary/steamapps/compatdata/377160/pfx
 WINE=/games/SteamLibrary/steamapps/common/Proton\ 3.16-4\ Beta\ ED/dist/bin/wine
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # Ensure history is written on the fly and appended each time.
 # No more lost history from closing multiple windows / panes!!
@@ -118,10 +125,18 @@ GITPROMPT='$(__git_ps1 "\e[0;30m╾╼[\e[0m %s \e[0m\e[0;30m]\e[0m")'
 
 PS1="${txtblk}┌╼${txtrst}${txtblk}[${txtrst}${txtblu}\u${txtrst}${txtblk}]${txtrst}${txtblk}╾╼${txtrst}${txtblk}[${txtrst}${txtblu}\h${txtrst}${txtblk}]${txtrst}${GITPROMPT} \n${txtblk}└╼${txtrst}${txtblk}[${txtrst}${txtblu}\w${txtrst}${txtblk}]${txtrst}\n${txtblk}⏵${txtrst} "
 
+eval "$(direnv hook bash)"
+
 #########################
 #	ALIASES
 #-----------------------#
 
 if [[ -f ~/.alias ]]; then
 	. ~/.alias
+fi
+
+# Fix for VTE issue under TILIX, if being used
+# See: https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID  ] || [ $VTE_VERSION  ]; then
+          source /etc/profile.d/vte.sh
 fi
