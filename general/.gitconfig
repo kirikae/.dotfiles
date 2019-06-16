@@ -1,8 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-name = Ben Colby-Sexton
-email = b.colby-sexton@gmail.com
+name = Kirikae
+email = 22813189+kirikae@users.noreply.github.com
 [github]
 	user = kirikae
 [merge]
