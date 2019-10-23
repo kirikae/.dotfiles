@@ -30,6 +30,7 @@ elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
   export WOKRON_HOME=~/Venvs
   . /usr/bin/virtualenvwrapper.sh
 fi
+export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # STEAM games stuff
 # Fallout 4
