@@ -1,92 +1,63 @@
 ! Kirikaes Xresources
-URxvt*termName:								rxvt-256color
-URxvt*font:										xft:Hasklug Nerd Font Mono:pixelsize:11
-URxvt*boldFont:								xft:Hasklug Nerd Font Mono:bold:pixelsize:11
-URxvt*italicFont:							xft:Hasklug Nerd Font Mono:italic:autohint=true:pixelsize:11
-URxvt*boldItalicFont:					xft:Hasklug Nerd Font Mono:bold:italic:autohint=true:pixelsize:11
-URxvt.saveLines:							10000
-URxvt.internalBorder:					0
-URxvt.externalBorder:					0
-URxvt.scrollBar:							false
-URxvt.letterSpace:						-1
-URxvt.borderColor:						Black
+!URxvt*termName:		rxvt-256color
+!URxvt*font:			xft:scientifica:size=8, xft:Kochi Gothic:antialias=false
+!URxvt*boldFont:		xft:scientifica:size=8:styple=Bold
+!URxvt*italicFont:		xft:scientifica:size=8:style=Italic
+!URxvt.saveLines:		10000
+!URxvt.internalBorder:		0
+!URxvt.externalBorder:		0
+!URxvt.scrollBar:		false
+!URxvt.letterSpace:		0
+!URxvt.borderColor:		Black
+
+! rofi
+rofi.font: scientifica Regular 8
+rofi.terminal: urxvtc
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e {ssh-client} {host}
+
+! URxvt
+URxvt.scrollBar: false
+URxvt.font: xft:scientifica:size=14, xft:Kochi Gothic:antialias=false
+URxvt.boldFont: xft:scientifica:size=14:style=Bold
+URxvt.italicFont: xft:scientifica:size=14:style=Italic
+URxvt.cursorUnderline: true
+URxvt.internalBorder: 15
+URxvt.letterSpace: 1
+URxvt.perl-ext-common: default,matcher,font-size
+URxvt.font-size.step: 2
 
 ! Performance
-URxvt*buffered:		 						false
-URxvt*saveLines:							0
-URxvt*skipBuiltinGlyphs:			true
-URxvt*scrollWithBuffer: 			false
-URxvt*skipScroll: 						false
-URxvt*jumpScroll: 						false
-
-! Disable Perl for performance reasons.
-!URxvt.perl-ext: 		eval
-!URxvt.perl-ext-common:  	eval
-
-
-!! Perl extensions
-! url-select (part of urxvt-perls package)
-URxvt.perl-ext-common:				default,clipboard,matcher,keyboard-select
-URxvt.keysym.M-u: 						perl:		url-select:select_next
-URxvt.url-select.autocopy:		true
-URxvt.url-select.button:			2
-URxvt.url-select.underline:		true
-URxvt.url-launcher:						/usr/bin/luakit
-URxvt.matcher.button:					1
+URxvt*buffered:		false
+URxvt*saveLines:		0
+URxvt*skipBuiltinGlyphs:	rue
+URxvt*scrollWithBuffer: 	false
+URxvt*skipScroll: 		false
+URxvt*jumpScroll: 		false
 
 ! DPI/Font
-Xft.dpi: 											96
-Xft.autohint: 								0
-Xft.antialias: 								1
-Xft.hinting: 									true
-Xft.hintstyle: 								hintslight
-Xft.rgba: 										rgb
-Xft.lcdfilter: 								lcddefault
+Xft.dpi: 			    96
+Xft.autohint: 		false
+Xft.antialias: 		1
+Xft.hinting: 			true
+Xft.hintstyle: 		hintslight
+Xft.rgba: 			  rgb
+Xft.lcdfilter: 		lcddefault
 
-! Rofi
-!rofi.font: 										Roboto 60
-!rofi.separator-style: 					none
-!rofi.scrollbar-width: 					0
-!rofi.lines: 										2
-!rofi.padding: 									400
-!rofi.width: 										100%
-!rofi.bw: 											400
+! Clickable URLs
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
 
-! Enables copy/paste with Ctrl-Shift-C/V
-URxvt.keysym.Shift-Control-V: 	perl:clipboard:paste
-URxvt.keysym.Shift-Control-C: 	perl:clipboard:copy
+! Use Control-Shift-V/C for X clipboard
+URxvt.iso14755:		false
+URxvt.iso14755_52:		false
+URxvt.keysym.Shift-Control-V:	eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:	eval:selection_to_clipboard
 
-! Disable ISO*
-URxvt.iso14755: 								false
-URxvt.iso14755_52: 							false
+! Resizeable text
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
 
 ! colors
 #include ".nord"
-!! Deep Space
-!! special
-!*.foreground:   #9aa4bd
-!*.background:   #1b202a
-!*.cursorColor:  #1b202a
-!! black
-!*.color0:       #1b202a
-!*.color8:       #232936
-!! red
-!*.color1:       #b15e7c
-!*.color9:       #b3785d
-!! green
-!*.color2:       #709d6c
-!*.color10:      #709d6c
-!! yellow
-!*.color3:       #b5a262
-!*.color11:      #d5b875
-!! blue
-!*.color4:       #608cc3
-!*.color12:      #608cc3
-!! purple
-!*.color5:       #8f72bf
-!*.color13:      #c47ebd
-!*.color6:       #56adb7
-!*.color14:      #51617d
-!! white
-!*.color7:       #323c4d
-!*.color15:      #9aa7bd
+

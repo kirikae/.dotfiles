@@ -43,6 +43,7 @@ Plug 'valloric/vim-operator-highlight'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'pallets/jinja'
+Plug 'einenlum/yaml-revealer'
 " }}}
 " UI {{{
 Plug 'itchyny/lightline.vim'
@@ -190,6 +191,7 @@ syntax on
 autocmd BufNewFile,BufRead *.txt :set spell
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
+autocmd BufNewFile,BufRead *.adoc :set spell
  " }}}
 " }}}
 "  Shortcuts and more... {{{

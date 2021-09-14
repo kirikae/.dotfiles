@@ -5,18 +5,18 @@ alias blog='cd ~/Blog'
 alias repos='cd ~/Repositories'
 
 # Quick Config Editing
-alias i3config='vim ~/.config/i3/config'
+alias i3config='${EDITOR} ~/.config/i3/config'
 alias vimrc='vim ~/.vimrc'
-alias bashrc='vim ~/.bashrc'
-alias aliasadd='vim ~/.alias'
-alias xresources='vim ~/.Xresources'
-alias polybarconf='vim ~/.config/polybar/config'
+alias bashrc='${EDITOR} ~/.bashrc'
+alias aliasadd='${EDITOR} ~/.alias'
+alias xresources='${EDITOR} ~/.Xresources'
+alias polybarconf='${EDITOR} ~/.config/polybar/config'
 alias reload='source ~/.bashrc'
 
 # Miscellaneous Commands
-alias ls="ls -v --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
-alias ll="ls -lv --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
-alias la="ls -lav --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias ls="ls -v --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -hFX"
+alias ll="ls -lv --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -F"
+alias la="ls -lav --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -F"
 #alias tree='tree -Csuh'
 alias tree='tree -C'
 alias grep='grep --color=tty -d skip'
@@ -30,8 +30,12 @@ alias mpv='mpv --shuffle'
 alias getip='grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
 alias passgen="python -c 'import crypt,getpass; print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'"
 alias pip-upgrade='pip install $(pip list --outdated --format=freeze | awk -F"==" "{print $1}") --upgrade'
+alias epochconvert="python -c 'import time; print(time.strftime(\"%a, %d %b %Y %H:%M:%S +0000\", time.localtime($@)))'"
+alias gopen='gio open'
 
-# X11 clipboard support for vim
-if [ -e /usr/bin/vimx ]; then
-	alias vim='/usr/bin/vimx'
+alias docker=podman
+
+# X11 clipboard support for ${EDITOR}
+if [ -e /usr/bin/${EDITOR}x ]; then
+	alias ${EDITOR}='/usr/bin/vimx'
 fi
