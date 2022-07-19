@@ -1,14 +1,10 @@
 ! Kirikaes Xresources
-!URxvt*termName:		rxvt-256color
-!URxvt*font:			xft:scientifica:size=8, xft:Kochi Gothic:antialias=false
-!URxvt*boldFont:		xft:scientifica:size=8:styple=Bold
-!URxvt*italicFont:		xft:scientifica:size=8:style=Italic
-!URxvt.saveLines:		10000
-!URxvt.internalBorder:		0
-!URxvt.externalBorder:		0
-!URxvt.scrollBar:		false
-!URxvt.letterSpace:		0
-!URxvt.borderColor:		Black
+
+! fonts
+URxvt.font: xft:Iosevka Term:style=Regular:size=10
+URxvt.boldFont: xft:Iosevka Term:style=Regular:size=10
+URxvt.italicFont: xft:Iosevka Term:style=Regular:size=10
+URxvt.boldItalicFont: xft:Iosevka Term:style=Regular:size=10
 
 ! rofi
 rofi.font: scientifica Regular 8
@@ -18,12 +14,10 @@ rofi.ssh-command: {terminal} -e {ssh-client} {host}
 
 ! URxvt
 URxvt.scrollBar: false
-URxvt.font: xft:scientifica:size=14, xft:Kochi Gothic:antialias=false
-URxvt.boldFont: xft:scientifica:size=14:style=Bold
-URxvt.italicFont: xft:scientifica:size=14:style=Italic
 URxvt.cursorUnderline: true
 URxvt.internalBorder: 15
-URxvt.letterSpace: 1
+URxvt.lineSpace: 1
+URxvt.letterSpace: 0
 URxvt.perl-ext-common: default,matcher,font-size
 URxvt.font-size.step: 2
 
@@ -40,8 +34,8 @@ Xft.dpi: 			    96
 Xft.autohint: 		false
 Xft.antialias: 		1
 Xft.hinting: 			true
-Xft.hintstyle: 		hintslight
-Xft.rgba: 			  rgb
+Xft.hintstyle: 		hintsfull
+Xft.rgba: 			  none
 Xft.lcdfilter: 		lcddefault
 
 ! Clickable URLs
