@@ -14,9 +14,9 @@ alias polybarconf='${EDITOR} ~/.config/polybar/config'
 alias reload='source ~/.bashrc'
 
 # Miscellaneous Commands
-alias ls="ls -v --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -hFX"
-alias ll="ls -lv --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -F"
-alias la="ls -lav --group-directories-first --time-style=+'%Y-%M-%dT%H:%M' --color=auto -F"
+alias ls="ls -v --group-directories-first --time-style=long-iso --color=auto -hFX"
+alias ll="ls -lv --group-directories-first --time-style=long-iso --color=auto -F"
+alias la="ls -lav --group-directories-first --time-style=long-iso --color=auto -F"
 #alias tree='tree -Csuh'
 alias tree='tree -C'
 alias grep='grep --color=tty -d skip'

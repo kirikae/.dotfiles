@@ -7,21 +7,23 @@ URxvt.italicFont: xft:Iosevka Term:style=Regular:size=10
 URxvt.boldItalicFont: xft:Iosevka Term:style=Regular:size=10
 
 ! rofi
-rofi.font: scientifica Regular 8
-rofi.terminal: urxvtc
+rofi.font: Iosevka Term Regular 8
+rofi.terminal: urxvt
 rofi.ssh-client: ssh
 rofi.ssh-command: {terminal} -e {ssh-client} {host}
 
 ! URxvt
 URxvt.scrollBar: false
-URxvt.cursorUnderline: true
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
 URxvt.internalBorder: 15
 URxvt.lineSpace: 1
 URxvt.letterSpace: 0
-URxvt.perl-ext-common: default,matcher,font-size
+URxvt.urgentOnBell: true
+URxvt.perl-ext-common: default,matcher
 URxvt.font-size.step: 2
 
-! Performance
+! URxvt Performance
 URxvt*buffered:		false
 URxvt*saveLines:		0
 URxvt*skipBuiltinGlyphs:	rue

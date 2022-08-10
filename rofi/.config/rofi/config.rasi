@@ -1,6 +1,15 @@
 configuration {
-  modi: "drun";
+  font: "Iosevka Term R 10";
+  width: 30;
+  line-margin: 10;
+  lines: 6;
+  columns: 2;
+
+  display-ssh:    "";
+  display-run:    "";
+  display-drun:   "";
+  display-window: "";
+  display-combi:  "";
   show-icons: true;
-  icon-theme: "Gruvbox";
-  theme: "pare";
 }
+@theme "~/.config/rofi/nord.rasi"
