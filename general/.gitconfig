@@ -7,3 +7,5 @@ email = 22813189+kirikae@users.noreply.github.com
 	tool = vimdiff
 [commit]
 	template = /home/kirikae/.gitmessage
+[init]
+  defaultBranch = main

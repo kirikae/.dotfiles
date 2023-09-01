@@ -44,7 +44,7 @@ PROMPT_COMMAND='$PROMPT_COMMMAND; history -a; history -n'
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 HISTCONTROL="ignoredups"
-HISTIGNORE='ls:clear:history:pwd:git status'
+HISTIGNORE='ls:clear:history:pwd:git status:mosquitto_'
 shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
@@ -68,13 +68,6 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1   		# For Konsole and Gnome-terminal
-#export LESS_TERMCAP_mb=$'\e[0;33m'
-#export LESS_TERMCAP_md=$'\e[0;35m'
-#export LESS_TERMCAP_me=$'\e[0m'
-#export LESS_TERMCAP_se=$'\e[0m'
-#export LESS_TERMCAP_so=$'\e[1;34;33m'
-#export LESS_TERMCAP_ue=$'\e[0m'
-#export LESS_TERMCAP_us=$'\e[1;31m'
 # Add support to Less as well
 export LESS="--RAW-CONTROL-CHARS"
 
@@ -126,8 +119,6 @@ GITPROMPT='$(__git_ps1 "\e[0;30m╾╼[\e[0m %s \e[0m\e[0;30m]\e[0m")'
 
 PS1="${txtblk}┌╼${txtrst}${txtblk}[${txtrst}${txtblu}\u${txtrst}${txtblk}]${txtrst}${txtblk}╾╼${txtrst}${txtblk}[${txtrst}${txtblu}\h${txtrst}${txtblk}]${txtrst}${GITPROMPT}$(__venv_ps1) \n${txtblk}└╼${txtrst}${txtblk}[${txtrst}${txtblu}\w${txtrst}${txtblk}]${txtrst} "
 
-eval "$(direnv hook bash)"
-
 #########################
 #	ALIASES
 #-----------------------#
@@ -136,8 +127,6 @@ if [[ -f ~/.alias ]]; then
 	. ~/.alias
 fi
 
-# Fix for VTE issue under TILIX, if being used
-# See: https://gnunn1.github.io/tilix-web/manual/vteconfig/
-#if [ $TILIX_ID  ] || [ $VTE_VERSION  ]; then
-#          source /etc/profile.d/vte.sh
-#fi
+source <(kubectl completion bash)
+eval "$(direnv hook bash)"
+eval "$(register-python-argcomplete kcli)"

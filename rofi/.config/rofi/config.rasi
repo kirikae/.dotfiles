@@ -11,5 +11,11 @@ configuration {
   display-window: "";
   display-combi:  "";
   show-icons: true;
+<<<<<<< HEAD
 }
 @theme "~/.config/rofi/nord.rasi"
+=======
+  icon-theme: "Gruvbox";
+}
+@theme "nord"
+>>>>>>> 645a047 (Updates...)
