@@ -1,0 +1,21 @@
+FROM docker.io/library/alpine:3.20
+
+WORKDIR /tmp
+
+ENV HOME_DIR="/home/lunaruser"
+ENV LV_BRANCH='release-1.4/neovim-0.9'
+ENV PATH="$PATH:$HOME_DIR/.local/bin"
+
+RUN apk add --update --no-cache \
+    bash git python3 cargo neovim ripgrep alpine-sdk curl
+
+RUN addgroup -S lunaruser && \
+    adduser -S lunaruser -G lunaruser -D --shell /bin/bash
+
+USER lunaruser
+
+RUN mkdir -p /home/lunaruser/.config/lvim
+COPY config.lua /home/lunaruser/.config/lvim/
+RUN bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/$LV_BRANCH/utils/installer/install.sh) --no-install-dependencies --yes
+
+CMD ["/home/lunaruser/.local/bin/lvim"]

@@ -1,0 +1,5 @@
+{
+    "name": "lunarvim-devcontainer",
+    "dockerFile": "Dockerfile.lunarvim",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font"
+}
